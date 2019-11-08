@@ -16,12 +16,40 @@ const Sidebar = ({ children }) => <div className="sidebar">{children}</div>
 
 const Content = () => <div className="content">Main Content Will Be Here!</div>
 
-function App() {
+const Layout = props => {
   return (
-    <div className="App">
-      <Nav>Nav section...</Nav>
-      <Body sidebar={<div>Sidebar...</div>} content={<Content />} />
+    <div className="layout">
+      <div className="top">{props.top}</div>
+      <div className="left">{props.left}</div>
+      <div className="center">{props.center}</div>
     </div>
+  )
+}
+
+/*
+<Layout
+  left={<Sidebar/>}
+  top={<NavBar/>}
+  center={<Content/>}
+/>
+*/
+
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <Nav>Nav section...</Nav>
+//       <Body sidebar={<div>Sidebar...</div>} content={<Content />} />
+//     </div>
+//   )
+// }
+
+const App = () => {
+  return (
+    <Layout
+      left={<Nav>Nav section...</Nav>}
+      top={<Nav>Nav Top</Nav>}
+      center={<Body sidebar={<div>Sidebar...</div>} content={<Content />} />}
+    />
   )
 }
 
