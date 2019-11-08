@@ -8,7 +8,7 @@ const Nav = ({ children }) => <div className="nav">{children}</div>
 function App() {
   return (
     <div className="App">
-      <Nav>Hello</Nav>
+      <Nav>Nav section...</Nav>
     </div>
   )
 }
